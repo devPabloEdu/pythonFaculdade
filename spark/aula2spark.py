@@ -1,6 +1,7 @@
 from pyspark import SparkContext;
 from pyspark.sql import SparkSession;
 
+
 spark_contexto = SparkContext();
 print(spark_contexto);
 print(spark_contexto.version());
@@ -29,5 +30,8 @@ query2 = 'SELECT longitude, latitude FROM tabela_temporaria WHERE total_roms = '
 localizacao_maximo_quartos = spark_session.sql(query2);
 pandas_localizacao_maximo_quartos = localizacao_maximo_quartos.toPandas();
 print(pandas_localizacao_maximo_quartos.head());
+
+spark_session.stop();
+
 
 
